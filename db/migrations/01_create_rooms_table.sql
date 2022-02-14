@@ -1,0 +1,1 @@
+CREATE TABLE rooms(id SERIAL PRIMARY KEY, address VARCHAR(60));s
