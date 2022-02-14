@@ -1,3 +1,7 @@
 <h1>Welcome to MakersBnB</h1>
 
-<%= @rooms.each { |room| room } %>
+ <ul>
+    <% @rooms.each do |room| %>
+      <li><%= room %></li><br>
+    <% end %>
+</ul>

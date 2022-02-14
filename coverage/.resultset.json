@@ -5,6 +5,7 @@
         "lines": [
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -30,6 +31,37 @@
           null,
           null,
           1,
+          null
+        ]
+      },
+      "/Users/olivercutting/Projects/MakersBnB-clue/lib/room.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          4,
+          4,
+          6,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          2,
+          null,
           null
         ]
       },
@@ -89,39 +121,8 @@
           null,
           null
         ]
-      },
-      "/Users/olivercutting/Projects/MakersBnB-clue/lib/room.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          4,
-          4,
-          null,
-          0,
-          null,
-          null,
-          4,
-          4,
-          6,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          0,
-          null,
-          null,
-          2,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1644852805
+    "timestamp": 1644853255
   }
 }
