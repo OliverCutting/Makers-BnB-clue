@@ -2,6 +2,11 @@
 
  <ul>
     <% @rooms.each do |room| %>
-      <li><%= room %></li><br>
+      <li class='room'>
+        <%= room %>
+        <form action='/bookingcompleted' method='post'>
+          <input type='submit' name='Book'/>
+        </form>
+      </li>
     <% end %>
 </ul>

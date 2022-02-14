@@ -25,5 +25,9 @@ class MakersBnB < Sinatra::Base
     redirect('/')
   end
 
+  post '/bookingcompleted' do
+    'Thank you for booking!'
+  end
+
   run! if app_file == $0
 end
