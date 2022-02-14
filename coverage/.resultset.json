@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/olivercutting/Projects/MakersBnB-clue/app.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/app.rb": {
         "lines": [
           1,
           1,
@@ -38,7 +38,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/lib/room.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/lib/room.rb": {
         "lines": [
           1,
           null,
@@ -69,7 +69,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/booking_a_room_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/booking_a_room_spec.rb": {
         "lines": [
           1,
           1,
@@ -81,7 +81,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/create_a_listing_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/create_a_listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -94,7 +94,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/list_available_rooms_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/list_available_rooms_spec.rb": {
         "lines": [
           1,
           1,
@@ -105,7 +105,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/test_page_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -116,7 +116,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/room_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/room_spec.rb": {
         "lines": [
           1,
           null,
@@ -139,6 +139,6 @@
         ]
       }
     },
-    "timestamp": 1644856270
+    "timestamp": 1644878696
   }
 }
