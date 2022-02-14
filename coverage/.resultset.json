@@ -16,11 +16,33 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          null,
           1,
           1,
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/create_a_listing_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -54,7 +76,14 @@
           1,
           1,
           1,
+          1,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           1,
           null,
           null,
@@ -68,6 +97,19 @@
           1,
           null,
           1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          4,
+          4,
+          6,
+          null,
+          null,
+          null,
+          1,
           2,
           2,
           null,
@@ -75,14 +117,11 @@
           null,
           null,
           2,
-          2,
-          2,
-          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1644850903
+    "timestamp": 1644852805
   }
 }
