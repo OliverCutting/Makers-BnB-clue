@@ -10,5 +10,10 @@ class MakersBnB < Sinatra::Base
     'Test page'
   end
 
+  get '/' do
+    @rooms = Room.list
+    erb(:index)
+  end
+
   run! if app_file == $0
 end
