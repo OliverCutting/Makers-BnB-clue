@@ -1,5 +1,10 @@
 <h1>Welcome to MakersBnB</h1>
 
+
+<% if @user %>
+  <h2>Welcome, <%= @user.email %></h2>
+<% end %>
+
  <ul>
     <% @rooms.each do |room| %>
       <li class='room'>

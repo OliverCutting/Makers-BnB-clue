@@ -2,7 +2,7 @@ require 'pg'
 
 def setup_test_database
   connection = PG.connect(dbname: 'makersbnb_test')
-  connection.exec("TRUNCATE rooms RESTART IDENTITY;")
+  connection.exec("TRUNCATE users, rooms RESTART IDENTITY;")
 end
 
 def populate_database
