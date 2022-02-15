@@ -15,4 +15,12 @@ describe Room do
       expect(Room.list).to include ('321 Lane Fake')
     end
   end
+
+  describe '.availability' do
+    it 'checks the room availability' do
+      connection = PG.connect(dbname: 'makersbnb_test')
+      Room.create('321 Lane Fake')
+      expect(Room.availability('321 Lane Fake')).to eq false
+    end
+  end
 end
