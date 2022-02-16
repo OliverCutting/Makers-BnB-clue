@@ -1,11 +1,15 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/room'
+require './lib/user'
+require './database_connection_setup'
+
 
 class MakersBnB < Sinatra::Base 
   configure :development do
     register Sinatra::Reloader 
   end
+  enable :sessions
 
   get '/test_page' do
     'Test page'
@@ -13,7 +17,9 @@ class MakersBnB < Sinatra::Base
 
   get '/' do
     @rooms = Room.list
-    @user = User.find(session[:user_id])
+    p session
+    p '=================='
+    p @user = User.find(id: session[:user_id])
     erb(:index)
   end
 
@@ -35,8 +41,10 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/users' do
-    User.create(email: params[:email], password: params[:password])
+    user = User.create(email: params[:email], password: params[:password])
     session[:user_id] = user.id
+    p session 
+    p '%%%%%%%%%%%%'
     redirect '/'
   end
 
