@@ -1,0 +1,1 @@
+ALTER TABLE rooms ADD COLUMN description VARCHAR, ADD COLUMN price_per_night VARCHAR(20);
