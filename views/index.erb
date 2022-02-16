@@ -1,9 +1,16 @@
 <h1>Welcome to MakersBnB</h1> 
 
+<h2>
+  <%= flash[:notice] %>
+</h2>
 
 <% if @user %>
   <h2>Welcome, <%= @user.email %></h2>
 <% end %>
+
+<form action="/sessions/destroy" method="post">
+  <input type="submit" value="Sign out" />
+</form>
 
  <ul>
     <% @rooms.each do |room| %>

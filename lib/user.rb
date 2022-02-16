@@ -1,5 +1,4 @@
-require 'database_connection'
-require 'user'
+require_relative 'database_connection'
 require 'bcrypt'
 
 class User
