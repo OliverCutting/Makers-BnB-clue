@@ -8,7 +8,7 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'webrick'
-gem 'rackup'
+
 
 group :test do
   gem 'capybara'

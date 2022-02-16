@@ -33,7 +33,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/bookingcompleted' do
-    'Thank you for booking!'
+    Room.book(params[:address])
   end
 
   get '/users/new' do
