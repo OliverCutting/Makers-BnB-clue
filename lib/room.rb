@@ -1,6 +1,13 @@
 require 'pg'
 
 class Room
+  attr_reader :address, :description, :price_per_night
+
+  def initialize(address, description, price_per_night)
+    @address = address
+    @description = description
+    @price_per_night = price_per_night
+  end
 
   def self.list
     if ENV['ENVIRONMENT'] == 'test'
@@ -11,7 +18,7 @@ class Room
 
     result = connection.exec("SELECT * FROM rooms")
     result.map do |room|
-      room['address']
+    Room.new(room['address'],room['description'],room['price_per_night'])
     end
   end
 
