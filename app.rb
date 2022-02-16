@@ -28,7 +28,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/' do
-    Room.create(params[:address])
+    Room.create(params[:address], params[:description], params[:price_per_night])
     redirect('/')
   end
 
