@@ -17,9 +17,7 @@ class MakersBnB < Sinatra::Base
 
   get '/' do
     @rooms = Room.list
-    p session
-    p '=================='
-    p @user = User.find(id: session[:user_id])
+    @user = User.find(id: session[:user_id])
     erb(:index)
   end
 
@@ -43,9 +41,19 @@ class MakersBnB < Sinatra::Base
   post '/users' do
     user = User.create(email: params[:email], password: params[:password])
     session[:user_id] = user.id
-    p session 
-    p '%%%%%%%%%%%%'
     redirect '/'
+  end
+
+  get '/sessions/new' do
+    erb :"sessions/new"
+  end
+
+  # in app.rb
+
+  post '/sessions' do
+    user = User.authenticate(email: params[:email], password: params[:password])
+    session[:user_id] = user.id
+    redirect('/')
   end
 
   run! if app_file == $0
