@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/johnconnolly/Desktop/BNB/app.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/app.rb": {
         "lines": [
           1,
           1,
@@ -21,8 +21,6 @@
           null,
           null,
           1,
-          6,
-          6,
           6,
           6,
           6,
@@ -49,15 +47,13 @@
           1,
           1,
           1,
-          1,
-          1,
           null,
           null,
           1,
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/lib/room.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/lib/room.rb": {
         "lines": [
           1,
           null,
@@ -105,7 +101,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/lib/user.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/lib/user.rb": {
         "lines": [
           1,
           1,
@@ -171,7 +167,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/lib/database_connection.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -190,7 +186,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/database_connection_setup.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/database_connection_setup.rb": {
         "lines": [
           1,
           null,
@@ -201,7 +197,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/database_connection_spec.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/database_connection_spec.rb": {
         "lines": [
           1,
           null,
@@ -232,7 +228,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/features/booking_a_room_spec.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/features/booking_a_room_spec.rb": {
         "lines": [
           1,
           1,
@@ -244,7 +240,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/features/create_a_listing_spec.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/features/create_a_listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -257,7 +253,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/features/list_available_rooms_spec.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/features/list_available_rooms_spec.rb": {
         "lines": [
           1,
           1,
@@ -268,36 +264,11 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/features/registration_spec.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/features/registration_spec.rb": {
         "lines": [
           null,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/johnconnolly/Desktop/BNB/spec/features/test_page_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/johnconnolly/Desktop/BNB/spec/features/unavailable_room_spec.rb": {
-        "lines": [
           1,
           1,
           1,
@@ -310,7 +281,32 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/room_spec.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/features/test_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/features/unavailable_room_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/room_spec.rb": {
         "lines": [
           1,
           null,
@@ -349,7 +345,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/user_spec.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/user_spec.rb": {
         "lines": [
           1,
           1,
@@ -384,7 +380,7 @@
           null
         ]
       },
-      "/Users/johnconnolly/Desktop/BNB/spec/database_helpers.rb": {
+      "/Users/olivercutting/Projects/Makers-BnB-clue/spec/database_helpers.rb": {
         "lines": [
           1,
           null,
@@ -397,6 +393,6 @@
         ]
       }
     },
-    "timestamp": 1645011856
+    "timestamp": 1645012412
   }
 }
