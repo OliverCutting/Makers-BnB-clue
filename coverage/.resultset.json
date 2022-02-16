@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/olivercutting/Projects/MakersBnB-clue/app.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/app.rb": {
         "lines": [
           1,
           1,
@@ -17,8 +17,13 @@
           null,
           null,
           1,
+<<<<<<< Updated upstream
           3,
           3,
+=======
+          5,
+          5,
+>>>>>>> Stashed changes
           null,
           null,
           1,
@@ -31,26 +36,36 @@
           null,
           null,
           1,
+<<<<<<< Updated upstream
           1,
+=======
+          3,
+>>>>>>> Stashed changes
           null,
           null,
           1,
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/lib/room.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/lib/room.rb": {
         "lines": [
           1,
           null,
           1,
           null,
           1,
+<<<<<<< Updated upstream
           5,
           5,
+=======
+          7,
+          7,
+>>>>>>> Stashed changes
           null,
           0,
           null,
           null,
+<<<<<<< Updated upstream
           5,
           5,
           7,
@@ -63,13 +78,45 @@
           null,
           0,
           null,
+=======
+          7,
+          7,
+          9,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          4,
+          null,
+          null,
+          1,
+          6,
+          6,
+          null,
+          0,
+          null,
+          null,
+          6,
+          null,
+          6,
+          4,
+          null,
+          2,
+          null,
+>>>>>>> Stashed changes
           null,
           2,
           null,
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/booking_a_room_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/booking_a_room_spec.rb": {
         "lines": [
           1,
           1,
@@ -81,7 +128,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/create_a_listing_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/create_a_listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -94,7 +141,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/list_available_rooms_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/list_available_rooms_spec.rb": {
         "lines": [
           1,
           1,
@@ -105,7 +152,7 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/features/test_page_spec.rb": {
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -116,7 +163,24 @@
           null
         ]
       },
-      "/Users/olivercutting/Projects/MakersBnB-clue/spec/room_spec.rb": {
+<<<<<<< Updated upstream
+=======
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/features/unavailable_room_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+>>>>>>> Stashed changes
+      "/Users/skar/Downloads/git_tutorial/work/Makers-BnB-clue/spec/room_spec.rb": {
         "lines": [
           1,
           null,
@@ -135,10 +199,34 @@
           1,
           null,
           null,
+<<<<<<< Updated upstream
+=======
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+>>>>>>> Stashed changes
           null
         ]
       }
     },
-    "timestamp": 1644856270
+<<<<<<< Updated upstream
+    "timestamp": 1644878696
+=======
+    "timestamp": 1644972611
+>>>>>>> Stashed changes
   }
 }

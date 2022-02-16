@@ -5,7 +5,8 @@
       <li class='room'>
         <%= room %>
         <form action='/bookingcompleted' method='post'>
-          <input type='submit' name='Book'/>
+          <input type="hidden" name="address" value="<%= room %>">
+          <input type='submit' name='Book' />
         </form>
       </li>
     <% end %>
