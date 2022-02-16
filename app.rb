@@ -40,6 +40,11 @@ class MakersBnB < Sinatra::Base
     erb :"users/new"
   end
 
+  post '/users/new' do
+    flash[:notice] = 'You must be signed in to do that.'
+    redirect('/users/new')
+  end
+
   post '/users' do
     user = User.create(email: params[:email], password: params[:password])
     session[:user_id] = user.id
