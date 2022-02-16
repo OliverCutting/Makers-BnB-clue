@@ -1,13 +1,6 @@
 require 'capybara/rspec'
 require 'rspec'
-require 'simplecov'
-require 'simplecov-console'
 require_relative './setup_test_database'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-])
-SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
