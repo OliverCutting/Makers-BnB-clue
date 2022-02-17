@@ -1,8 +1,10 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
+require 'pony'
 require './lib/room'
 require './lib/user'
+require './lib/mailer'
 require './database_connection_setup'
 
 
@@ -29,6 +31,7 @@ class MakersBnB < Sinatra::Base
 
   post '/' do
     Room.create(params[:address], params[:description], params[:price_per_night], params[:start_date], params[:end_date])
+    #Mailer.createlistingconfirmation(params[:email])
     redirect('/')
   end
 
@@ -48,6 +51,7 @@ class MakersBnB < Sinatra::Base
   post '/users' do
     user = User.create(email: params[:email], password: params[:password])
     session[:user_id] = user.id
+    Mailer.registrationconfirmation(params[:email])
     redirect '/'
   end
 

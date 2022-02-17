@@ -10,7 +10,8 @@ gem 'sinatra-contrib'
 gem 'sinatra-flash'
 gem 'webrick'
 gem 'bcrypt'
-
+gem 'pony'
+gem 'net-smtp', require: false
 
 group :test do
   gem 'capybara'

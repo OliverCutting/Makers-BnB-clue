@@ -1,6 +1,3 @@
-# in spec/features/registration_spec.rb
-
-
 feature 'registration' do
   scenario 'a user can sign up' do
     visit '/users/new'
