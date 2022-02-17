@@ -41,7 +41,12 @@ class Room
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
-    room = connection.exec("SELECT address FROM rooms WHERE id=#{room_id};")
+    room = connection.exec("SELECT address, start_date, end_date FROM rooms WHERE id=#{room_id};")
+    
+    if date < room[0]['start_date'] || date > room[0]['end_date']
+      return "Error: Chosen date is outside of available dates"
+    end
+
     bookingexists = connection.exec("SELECT * FROM bookings WHERE room_id='#{room_id}' AND date='#{date}';")
 
     if bookingexists.cmd_tuples == 0 
