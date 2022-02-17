@@ -28,12 +28,12 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/' do
-    Room.create(params[:address], params[:description], params[:price_per_night])
+    Room.create(params[:address], params[:description], params[:price_per_night], params[:start_date], params[:end_date])
     redirect('/')
   end
 
   post '/bookingcompleted' do
-    Room.book(params[:address])
+    Room.book(params[:room_id], params[:date], session[:user_id])
   end
 
   get '/users/new' do

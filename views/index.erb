@@ -21,15 +21,16 @@
 <ul>
   <% @rooms.each do |room| %>
     <li class='room'>
-      <%= "#{room.address}, #{room.description}, #{room.price_per_night}" %>
+      <%= "#{room.address}, #{room.description}, #{room.price_per_night}, Available between: #{room.start_date} and #{room.end_date}" %>
       <% if @user %>
         <form action='/bookingcompleted' method='post'>
-          <input type="hidden" name="address" value="<%= room.address %>">
+          <input type="hidden" name="room_id" value="<%= room.id %>">
+          <input type='date' name='date'/>
           <input type='submit' name='Book' />
         </form>
       <% else %>
         <form action='/users/new' method='post'>
-          <input type="hidden" name="address" value="<%= room.address %>">
+          <input type="hidden" name="room_id" value="<%= room.id %>">
           <input type='submit' name='Book' />
         </form>
       <% end %>
