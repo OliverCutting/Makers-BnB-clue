@@ -37,3 +37,9 @@
     </li>
   <% end %>
 </ul>
+
+<% if @user %>
+  <form action="/newlisting" method='post'>
+    <input type="submit" value="Add a Listing" />
+  </form>
+<% end %>

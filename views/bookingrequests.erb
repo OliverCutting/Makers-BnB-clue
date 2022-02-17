@@ -1,0 +1,7 @@
+<ul>
+  <% @requests.each do |request| %>
+    <li class='request'>
+      <%= "#{request.id}, #{request.address}, #{request.date}, #{request.user_id}, #{request.owner_id}" %>
+    </li>
+  <% end %>
+</ul>
