@@ -5,6 +5,6 @@ feature 'Confirm booking request' do
     connection.exec("INSERT INTO bookings (room_id, date, user_id, owner_id) VALUES (2, '2022-02-07', 1, 2);")
     visit '/bookingrequests'
 
-    expect(page).to have_content('123 Fake Lane')
+    expect(page).to have_content('321 Fake Lane')
   end
 end
