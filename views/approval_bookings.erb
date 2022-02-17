@@ -1,6 +1,11 @@
-<h1>Please confirm booking!</h1>
+<h2>Please confirm booking!</h2>
 
 <form action="/approval" method="post">
   <input type="hidden" name="address" value="<%= @address %>">
   <input type='submit' value='Yes' name='Yes' />
-</form
+</form>
+
+<form action="/decline_approval" method="post">
+  <input type="hidden" name="address" value="<%= @address %>">
+  <input type='submit' value='No' name='No' />
+</form>

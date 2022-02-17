@@ -42,6 +42,10 @@ class MakersBnB < Sinatra::Base
     Room.approve(params[:address])
   end
 
+  post '/decline_approval' do
+    "The booking is not approved"
+  end
+
   get '/users/new' do
     erb :"users/new"
   end
