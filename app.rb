@@ -1,8 +1,10 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
+require 'pony'
 require './lib/room'
 require './lib/user'
+require './lib/mailer'
 require './database_connection_setup'
 
 
@@ -48,6 +50,7 @@ class MakersBnB < Sinatra::Base
   post '/users' do
     user = User.create(email: params[:email], password: params[:password])
     session[:user_id] = user.id
+    Mailer.registrationconfirmation(params[:email])
     redirect '/'
   end
 
