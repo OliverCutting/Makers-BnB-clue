@@ -19,18 +19,25 @@ describe Room do
   end
 
   describe '.book' do
+    it 'asks to confirm the booking' do
+      Room.create('321 Lane Fake', '3 storey treehouse with open fire', '£200') 
+      expect(Room.book('321 Lane Fake')).to eq "Please confirm booking!"
+    end
+  end
+
+  describe '.approve' do
     it 'allows the user to book the room' do
       connection = PG.connect(dbname: 'makersbnb_test')
       Room.create('321 Lane Fake', '3 storey treehouse with open fire', '£200')
-      expect(Room.book('321 Lane Fake')).to eq "Thank you for booking!"
+      expect(Room.approve('321 Lane Fake')).to eq "Thanks for booking!"
     end
 
     it 'doest not allow to double book the same room' do
       connection = PG.connect(dbname: 'makersbnb_test')
       Room.create('321 Lane Fake', '3 storey treehouse with open fire', '£200')
-      Room.book('321 Lane Fake')
+      Room.approve('321 Lane Fake')
 
-      expect(Room.book('321 Lane Fake')).to eq "Unfortunately, this room is not available!"
+      expect(Room.approve('321 Lane Fake')).to eq "Unfortunately, this room is not available!"
     end
   end
 

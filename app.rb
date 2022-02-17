@@ -34,6 +34,12 @@ class MakersBnB < Sinatra::Base
 
   post '/bookingcompleted' do
     Room.book(params[:address])
+    @address = params[:address]
+    erb :"approval_bookings"
+  end
+
+  post '/approval' do
+    Room.approve(params[:address])
   end
 
   get '/users/new' do

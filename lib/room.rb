@@ -33,6 +33,10 @@ class Room
   end
 
   def self.book(addr)
+    "Please confirm booking!"
+  end
+
+  def self.approve(addr)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test')
     else
@@ -42,7 +46,7 @@ class Room
     result = connection.exec("UPDATE rooms SET available = FALSE WHERE address = '#{addr}' and available = TRUE;")
    
     if result.cmd_tuples > 0
-      "Thank you for booking!"
+      "Thanks for booking!"
     else 
       "Unfortunately, this room is not available!"
     end

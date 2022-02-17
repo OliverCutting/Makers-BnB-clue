@@ -4,6 +4,6 @@ feature 'Booking a room' do
     visit('/')
     first('.room').click_button('Book')
 
-    expect(page).to have_content('Thank you for booking!')
+    expect(page).to have_content('Please confirm booking!')
   end
 end
