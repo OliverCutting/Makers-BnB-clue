@@ -25,7 +25,7 @@ class MakersBnB < Sinatra::Base
     erb(:index)
   end
 
-  get '/newlisting' do
+  post '/newlisting' do
     erb(:newlisting)
   end
 

@@ -1,9 +1,38 @@
-<h2>
-  <%= flash[:notice] %>
-</h2>
+<html>
+<head>
+<link rel="stylesheet" href="/new.css">
+</head>
+  <div class="new">
+    <h2>
+      <%= flash[:notice] %>
+    </h2>
+    <h1>Please enter your details to sign in </h1>
+    <form action="/sessions" method="post">
+      <input type="email" name="email" />
+      <input type="password" name="password" />
+      <input type="submit" value="Sign in" />
+    </form>
+  </div>
 
-<form action="/sessions" method="post">
-  <input type="email" name="email" />
-  <input type="password" name="password" />
-  <input type="submit" value="Sign in" />
-</form>
+  <footer>
+  <div class="left-footer">
+  <h3>MakersBnB</h3>
+  <h4> Makers Lane</h4>
+  <h4> Makersville</h4>
+  <h4> The Universe</h4>
+  </div>
+
+  <div class="centre-footer">
+  <h5> Managing Director: Oliver Cutting</h5>
+  <h5> Managing Director: Sonali Kar</h5>
+  <h5> Managing Director: Luce Collins</h5>
+  <h5> Managing Director: John Connolly</h5>
+  <br>
+  <h6>Legal</h6>
+  <h6> Do not book holidays from this site, they are not fit for purpose and you may still be charged.</h6>
+   </div>
+  <div class="footer-left">
+  <img src="/images/logo.jpg" alt="logo">
+  </div>
+  </footer>
+</html>

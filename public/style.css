@@ -63,13 +63,20 @@ header h1{
 }
 
 header input{
-  background-color: rgb(236, 168, 40);
+  background-color: black;
+  color: white;
+  border: 2px solid white;
   margin-right: 100px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   width: 100px;
   padding: 5 10;
   border-radius: 20px;
   margin-top: 10px;
+}
+
+header input:hover{
+  background-color: orange;
+  color: black;
 }
 
 

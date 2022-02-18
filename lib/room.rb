@@ -32,7 +32,7 @@ class Room
       connection = PG.connect(dbname: 'makersbnb')
     end
 
-    result = connection.exec("INSERT INTO rooms (address, description, price_per_night, start_date, end_date) VALUES ('#{address}', '#{description}', '#{price_per_night}', '#{start_date}', '#{end_date}');")
+    result = connection.exec("INSERT INTO rooms (address, description, price_per_night, start_date, end_date) VALUES ('#{address}', '#{description}', '#{price_per_night}', '#{start_date}', '#{end_date});")
   end
 
   def self.book(room_id, date, user_id)
