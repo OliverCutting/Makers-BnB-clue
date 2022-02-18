@@ -1,0 +1,47 @@
+body{
+  background-image: url(images/background.jpg);
+  text-align: center;
+  display: block;
+  height: auto; 
+  background-size: auto;
+  
+}
+
+
+h1{
+  padding-top: 80px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input{
+  width: 50%;
+  height: 60px;
+  margin-bottom: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin: 0 auto;
+  margin-top: 200px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.left-footer{
+  padding-left: 20px;
+}
+
+.centre-footer{
+  align-items: center;
+  text-align: center;
+}
+footer img{
+  width:250px;
+  height: 150px;
+}

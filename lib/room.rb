@@ -21,6 +21,7 @@ class Room
     end
   end
 
+
   def self.create(address, description, price_per_night, start_date, end_date, owner_id)
     result = DatabaseConnection.query(
       "INSERT INTO rooms (address, description, price_per_night, start_date, end_date, owner_id) VALUES ($1, $2, $3, $4, $5, $6);",["#{address}", "#{description}", "#{price_per_night}", "#{start_date}", "#{end_date}", "#{owner_id}"])
