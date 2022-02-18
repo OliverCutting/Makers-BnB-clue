@@ -18,7 +18,7 @@ describe Room do
 
   describe '.book' do
     it 'allows the user to book the room' do
-      expect(Room.book(1, '2022-02-07', 1)).to eq "Thank you for booking 123 Fake Lane on 2022-02-07!"
+      expect(Room.book(1, '2022-02-07', 1)).to eq "Thank you for requesting to book 123 Fake Lane on 2022-02-07! The lister will now review your request"
     end
 
     it 'doest not allow to double book the same room' do

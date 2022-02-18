@@ -5,6 +5,6 @@ feature 'Booking a room' do
     first('.room').fill_in('date', with: '2022-02-07')
     first('.room').click_button('Book')
 
-    expect(page).to have_content('Thank you for booking 123 Fake Lane on 2022-02-07!')
+    expect(page).to have_content('Thank you for requesting to book 123 Fake Lane on 2022-02-07! The lister will now review your request')
   end
 end
