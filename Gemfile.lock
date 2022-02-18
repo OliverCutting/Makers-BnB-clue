@@ -83,7 +83,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   capybara
-  mail
   net-smtp
   pg
   pony

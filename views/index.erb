@@ -1,45 +1,92 @@
-<h1>Welcome to MakersBnB</h1> 
+<html>
+<head>
 
-<h2>
-  <%= flash[:notice] %>
-</h2>
+<link rel="stylesheet" href="style.css">
+</head>
 
-<% if @user %>
-  <h2>Welcome, <%= @user.email %></h2>
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign Out" />
-  </form>
-<% elsif @user.nil? %>
-  <form action="/users/new">
-    <input type="submit" value="Sign Up" />
-  </form>
-  <form action="/sessions/new">
-    <input type="submit" value="Sign In" />
-  </form>
-<% end %>
+  <header>
+  <div class="header-logo">
+    <div id="logo-img">
+    <img src="images/logo.jpg" alt="logo">
+    </div>
+  </div>
+     <h1>Welcome to MakersBnB</h1> 
+    
+    <h2>
+      <%= flash[:notice] %>
+    </h2>
 
-<ul>
-  <% @rooms.each do |room| %>
-    <li class='room'>
-      <%= "#{room.address}, #{room.description}, #{room.price_per_night}, Available between: #{room.start_date} and #{room.end_date}" %>
-      <% if @user %>
-        <form action='/bookingcompleted' method='post'>
-          <input type="hidden" name="room_id" value="<%= room.id %>">
-          <input type='date' name='date'/>
-          <input type='submit' name='Book' />
-        </form>
-      <% else %>
-        <form action='/users/new' method='post'>
-          <input type="hidden" name="room_id" value="<%= room.id %>">
-          <input type='submit' name='Book' />
-        </form>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  
+  
+  <div class="sign-in">
+    <% if @user %>
+      <h2>Welcome, <%= @user.email %></h2>
+      <form action="/sessions/destroy" method="post">
+        <input type="submit" value="Sign Out" />
+      </form>
+    <% elsif @user.nil? %>
+      <form action="/users/new">
+        <input type="submit" value="Sign Up" />
+      </form>
+      <form action="/sessions/new">
+        <input type="submit" value="Sign In" />
+      </form>
+    <% end %>
+  </div>
+  </header>
 
-<% if @user %>
-  <form action="/newlisting" method='post'>
-    <input type="submit" value="Add a Listing" />
-  </form>
-<% end %>
+  <div class="main-img">
+  <img src="images/glamp.jpg" alt="cabin"> 
+
+  </div>  
+  <div class="listings">
+    <ul>
+      <% @rooms.each do |room| %>
+        <li class='room'>
+        <div class="list-img">
+        <img src="images/cabin.jpg">
+        </div>
+          <div class="list-details">
+            <%= "#{room.address},<br> #{room.description},<br> #{room.price_per_night},<br> Available between: #{room.start_date} and #{room.end_date}" %>
+            <% if @user %>
+              <form action='/bookingcompleted' method='post'>
+                <input type="hidden" name="room_id" value="<%= room.id %>">
+                <input type='date' name='date'/>
+                <input type='submit' name='Book' />
+              </form>
+            <% else %>
+              <form action='/users/new' method='post'>
+                <input type="hidden" name="room_id" value="<%= room.id %>">
+                <input type='submit' name='Book' />
+              </form>
+            <% end %>
+                    </li>
+                  <% end %>
+          </div>
+    </ul>
+  </div>
+
+  <footer>
+  <div class="left-footer">
+  <h3>MakersBnB</h3>
+  <h4> Makers Lane</h4>
+  <h4> Makersville</h4>
+  <h4> The Universe</h4>
+  </div>
+
+  <div class="centre-footer">
+  <h5> Managing Director: Oliver Cutting</h5>
+  <h5> Managing Director: Sonali Kar</h5>
+  <h5> Managing Director: Luce Collins</h5>
+  <h5> Managing Director: John Connolly</h5>
+  <br>
+  <h6>Legal</h6>
+  <h6> Do not book holidays from this site, they are not fit for purpose and you may still be charged.</h6>
+   </div>
+  <div class="footer-left">
+  <img src="images/logo.jpg" alt="logo">
+  </div>
+  </footer>
+
+  </footer>
+</html>
