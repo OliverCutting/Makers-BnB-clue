@@ -27,15 +27,15 @@ class Room
   end
 
   def self.book(room_id, date, user_id)
-    room = DatabaseConnection.query("SELECT address, start_date, end_date FROM rooms WHERE id=$1;", ["#{room_id}"])
+    room = DatabaseConnection.query("SELECT address, start_date, end_date, owner_id FROM rooms WHERE id=$1;", ["#{room_id}"])
     if date < room[0]['start_date'] || date > room[0]['end_date']
       return "Error: Chosen date is outside of available dates"
     end
-
+    owner_id = room[0]['owner_id']
     bookingexists = DatabaseConnection.query("SELECT * FROM bookings WHERE room_id=$1 AND date=$2;", ["#{room_id}", "#{date}"])
     
     if bookingexists.cmd_tuples == 0 
-      result = DatabaseConnection.query("INSERT INTO bookings (room_id, date, user_id) VALUES ($1, $2, $3);", ["#{room_id}", "#{date}", "#{user_id}"])
+      result = DatabaseConnection.query("INSERT INTO bookings (room_id, date, user_id, owner_id) VALUES ($1, $2, $3, $4);", ["#{room_id}", "#{date}", user_id, owner_id])
       Mailer.bookingrequestconfirmation(user_id, room_id, date)
       "Thank you for requesting to book #{room[0]['address']} on #{date}! The lister will now review your request"
     else 
