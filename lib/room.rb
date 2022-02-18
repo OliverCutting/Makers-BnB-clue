@@ -1,4 +1,5 @@
 require 'pg'
+require_relative 'database_connection'
 
 class Room
   attr_reader :id, :address, :description, :price_per_night, :start_date, :end_date
@@ -14,48 +15,27 @@ class Room
   end
 
   def self.list
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
-
-    result = connection.exec("SELECT * FROM rooms")
+    result = DatabaseConnection.query("SELECT * FROM rooms")
     result.map do |room|
     Room.new(room['id'], room['address'],room['description'],room['price_per_night'], room['start_date'], room['end_date'], room['owner_id'])
     end
   end
 
   def self.create(address, description, price_per_night, start_date, end_date, owner_id)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
-
-    result = connection.exec(
+    result = DatabaseConnection.query(
       "INSERT INTO rooms (address, description, price_per_night, start_date, end_date, owner_id) VALUES ('#{address}', '#{description}', '#{price_per_night}', '#{start_date}', '#{end_date}', #{owner_id});")
   end
 
   def self.book(room_id, date, user_id)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
-    room = connection.exec("SELECT address, start_date, end_date FROM rooms WHERE id=#{room_id};")
-    
+    room = DatabaseConnection.query("SELECT address, start_date, end_date FROM rooms WHERE id=#{room_id};")
     if date < room[0]['start_date'] || date > room[0]['end_date']
       return "Error: Chosen date is outside of available dates"
     end
 
-    bookingexists = connection.exec("SELECT * FROM bookings WHERE room_id='#{room_id}' AND date='#{date}';")
-    # p owner_id_table = connection.exec("SELECT owner_id FROM rooms WHERE id='#{room_id}';")
-    # owner_id_table
-    # p owner_id = owner_id_table[0]['owner_id']
+    bookingexists = DatabaseConnection.query("SELECT * FROM bookings WHERE room_id='#{room_id}' AND date='#{date}';")
     
     if bookingexists.cmd_tuples == 0 
-      result = connection.exec("INSERT INTO bookings (room_id, date, user_id) VALUES (#{room_id}, '#{date}', #{user_id});")
+      result = DatabaseConnection.query("INSERT INTO bookings (room_id, date, user_id) VALUES (#{room_id}, '#{date}', #{user_id});")
       "Thank you for booking #{room[0]['address']} on #{date}!"
     else 
       "Unfortunately, this room is not available on this date!"
