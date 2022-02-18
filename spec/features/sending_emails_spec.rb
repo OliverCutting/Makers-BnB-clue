@@ -30,4 +30,14 @@ feature "Sending emails" do
 
     expect(Mail::TestMailer.deliveries.length).to eq(5)
   end
+
+  scenario 'should send an email after booking request confirmation' do
+    Pony.override_options = { :via => :test }
+    sign_up_and_in
+    connection = PG.connect(dbname: 'makersbnb_test')
+    connection.exec("INSERT INTO bookings (room_id, date, user_id, owner_id) VALUES (2, '2022-02-07', 1, 2);")
+    visit('/bookingrequests')
+    first('.request').click_button('Confirm')
+    expect(Mail::TestMailer.deliveries.length).to eq(7)
+  end
 end

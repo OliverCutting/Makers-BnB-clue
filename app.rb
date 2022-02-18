@@ -83,6 +83,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/confirm' do
+    Mailer.bookingconfirmation(session[:user_id])
     Booking.confirm(params[:booking_id])
     redirect('/bookingrequests')
   end
