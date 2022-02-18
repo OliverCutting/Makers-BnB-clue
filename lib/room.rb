@@ -36,7 +36,8 @@ class Room
     
     if bookingexists.cmd_tuples == 0 
       result = DatabaseConnection.query("INSERT INTO bookings (room_id, date, user_id) VALUES ($1, $2, $3);", ["#{room_id}", "#{date}", "#{user_id}"])
-      "Thank you for booking #{room[0]['address']} on #{date}!"
+      Mailer.bookingconfirmation(user_id, room_id, date)
+      "Thank you for requesting to book #{room[0]['address']} on #{date}! The lister will now review your request"
     else 
       "Unfortunately, this room is not available on this date!"
     end
