@@ -1,7 +1,11 @@
 <ul>
   <% @requests.each do |request| %>
     <li class='request'>
-      <%= "#{request.id}, #{request.address}, #{request.date}, #{request.user_id}, #{request.owner_id}" %>
+    <form action='/confirm' method='post'>
+      <%= "User Number: #{request.user_id}, would like to rent #{request.address} on: #{request.date}" %>
+      <input type="hidden" name="booking_id" value="<%= request.id %>">
+      <input type='submit' name='Confirm'>
+    </form>
     </li>
   <% end %>
 </ul>
