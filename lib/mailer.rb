@@ -18,13 +18,15 @@ class Mailer
   end
 
   def self.bookingrequestconfirmation(user_id, room_id, date)
-    room = DatabaseConnection.query("SELECT address, date FROM rooms JOIN bookings ON (bookings.id=rooms.id) WHERE rooms.id=#{room_id} AND date='#{date}'")
+    room = DatabaseConnection.query("SELECT address, date FROM rooms JOIN bookings ON (bookings.room_id=rooms.id) WHERE rooms.id=#{room_id} AND date='#{date}'")
     result = DatabaseConnection.query("SELECT email FROM users WHERE id = $1", [user_id])
     email = result[0]['email']
+    address = room[0]['address']
+    date = room[0]['date']
     Pony.mail(:to => email,
     :from => 'makersbnb@fake.com',
     :subject => 'Booking request sent',
-    :body => "Thank you for requesting to book #{room[0]['address']} on #{room[0]['date']} with MakersBnB")
+    :body => "Thank you for requesting to book #{address} on #{date} with MakersBnB")
   end
 
   def self.bookingconfirmation(user_id)
