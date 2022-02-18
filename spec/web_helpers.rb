@@ -5,10 +5,6 @@ def sign_up_and_in
     click_button('Submit')
 end
 
-def do_not_send_email
-  Pony.stub(:deliver)
-end
-
 def sign_out
   visit '/'
   click_button('Sign Out')
