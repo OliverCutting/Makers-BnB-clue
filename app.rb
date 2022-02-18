@@ -32,6 +32,7 @@ class MakersBnB < Sinatra::Base
 
   post '/' do
     Room.create(params[:address], params[:description], params[:price_per_night], params[:start_date], params[:end_date], session[:user_id])
+    Mailer.listingconfirmation(session[:user_id])
     redirect('/')
   end
 
