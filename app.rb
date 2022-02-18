@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require 'sinatra/flash'
 require 'pony'
 require './lib/room'
+require './lib/booking'
 require './lib/user'
 require './lib/mailer'
 require './database_connection_setup'
@@ -25,12 +26,12 @@ class MakersBnB < Sinatra::Base
     erb(:index)
   end
 
-  get '/newlisting' do
+  post '/newlisting' do
     erb(:newlisting)
   end
 
   post '/' do
-    Room.create(params[:address], params[:description], params[:price_per_night], params[:start_date], params[:end_date])
+    Room.create(params[:address], params[:description], params[:price_per_night], params[:start_date], params[:end_date], session[:user_id])
     redirect('/')
   end
 
@@ -73,6 +74,11 @@ class MakersBnB < Sinatra::Base
     session.clear
     flash[:notice] = 'You have signed out.'
     redirect('/')
+  end
+
+  get '/bookingrequests' do
+    @requests = Booking.requests(session[:user_id])
+    erb(:bookingrequests)
   end
 
   run! if app_file == $0

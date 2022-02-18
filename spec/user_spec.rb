@@ -35,8 +35,6 @@ describe User do
     expect(User.find(id: nil)).to eq nil
   end
 
-  # in spec/user_spec.rb
-
   describe '.authenticate' do
     it 'returns a user given a correct username and password, if one exists' do
       user = User.create(email: 'test@example.com', password: 'password123')
