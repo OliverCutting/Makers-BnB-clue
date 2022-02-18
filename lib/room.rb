@@ -27,15 +27,15 @@ class Room
   end
 
   def self.book(room_id, date, user_id)
-    room = DatabaseConnection.query("SELECT address, start_date, end_date FROM rooms WHERE id=#{room_id};")
+    room = DatabaseConnection.query("SELECT address, start_date, end_date FROM rooms WHERE id=$1;", ["#{room_id}"])
     if date < room[0]['start_date'] || date > room[0]['end_date']
       return "Error: Chosen date is outside of available dates"
     end
 
-    bookingexists = DatabaseConnection.query("SELECT * FROM bookings WHERE room_id='#{room_id}' AND date='#{date}';")
+    bookingexists = DatabaseConnection.query("SELECT * FROM bookings WHERE room_id=$1 AND date=$2;", ["#{room_id}", "#{date}"])
     
     if bookingexists.cmd_tuples == 0 
-      result = DatabaseConnection.query("INSERT INTO bookings (room_id, date, user_id) VALUES (#{room_id}, '#{date}', #{user_id});")
+      result = DatabaseConnection.query("INSERT INTO bookings (room_id, date, user_id) VALUES ($1, $2, $3);", ["#{room_id}", "#{date}", "#{user_id}"])
       "Thank you for booking #{room[0]['address']} on #{date}!"
     else 
       "Unfortunately, this room is not available on this date!"
